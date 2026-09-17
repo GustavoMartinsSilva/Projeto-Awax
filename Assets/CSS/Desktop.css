@@ -1,0 +1,231 @@
+/* -------------------------CORES DAS FONTES --------------------
+
+#b28756 logo
+
+*/
+
+/*  ---------------FONTES----------------------
+
+font-family: 'Montserrat', 'Arial', 'Helvetica', 'sans-serif';
+
+*/
+
+
+
+
+
+
+
+
+/* usamos  display: block; pra definirmos altura no elemento */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* inclui tamanho de borda */
+}
+
+body {
+    font-family: 'Montserrat', 'Arial', 'Helvetica', 'sans-serif';
+    font-size: 13px;
+    overflow-x: hidden; /* pra não ficar uma birda feiosa, todo o conteúdo que ultrapassar 
+    a hotizontal, vai ser ignorado */
+}
+
+
+/*
+ ===============================================================
+ 
+HEADER
+
+==================================================================
+*/
+
+
+header {
+    height: 100px;
+    background-color: black;
+}
+
+
+.header{
+    display: flex;
+    max-width: 1140px; /* largura máxima dela */
+    height: 100px;
+    margin: auto; /* deixa no meio do elemento pai */
+    align-items: center;
+}
+
+.logo {
+    display:  flex;
+    align-items: center;
+    width: 100px;
+    background-color: #b28756;
+    border-radius: 30px;
+}
+
+.menu {
+    flex: 1; /* ele pega todo o restante do espaço do elemento pai */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logoimg {
+    width: 80px;
+    height: 80px;
+}
+
+.menu ul,
+.menu li {
+    display: flex;
+    list-style: none;
+}
+
+.menu ul {
+    display: flex;
+}
+
+.menu li,
+.menu a {
+    text-decoration: none;
+    margin-left: 5px;
+    color: white;
+    text-transform: uppercase; /* Deixa tudo maiúsculo */
+    font-weight: 600;
+    display: flex; /* vou precisar aumentar a altura dele */
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    height: 100px;
+}
+
+.menu  li a:hover {
+    border-bottom: 5px  solid  #B28756;
+}
+
+.menu .active a {
+    border-bottom: 5px  solid  #B28756;
+
+}
+
+/*
+ ============================================================================
+
+MAIN
+
+=============================================================================
+*/
+
+
+/*
+ ============================================================================
+
+BANNER
+
+=============================================================================
+*/
+
+.banner {
+    height: calc(100vh - 100px); /* é o tamanho da tela -100px que é o tamanho do meu header, pra não ficar uma barra de rolagem */
+    background-color: #333; /* enquanto a imagem não carrega, esse é o fundo que vai aparecer */
+    background-image: url('../Images/bg.jpg');
+    background-size: cover; /* se adapta */
+    background-position: bottom; /* vai priorizar a parte debaixo  da imagem */
+    overflow: hidden;  /* tudo que passar do tamanhdo do meu banner ele vai ignorar(esconder) */
+}
+
+
+/* pra passar de um slide para outro slide */
+.banner .sliders {
+    width: 1000vw; /* ele tem que ter no mínimo a soma da quantidade de sliders que eu tenho, ou seja, cada slide tem 1.000px */
+    height: 100%;
+}
+
+.banner .slide {
+    width: 100vw;
+    height: 100%;
+    display: inline-block; /* os sliders ficam um do lado do outro respeitando as proporções definidas */
+    background-color: rgba(0, 0, 0, 0.8);
+    
+}
+
+.banner .slide-area{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    color: #ffff;
+    flex-direction: column; /* para as tags ficarem uma abaixo da outra */
+
+}
+.banner h1{
+    text-transform: uppercase;
+    font-weight: bold ;
+    font-size: 50px;
+}
+
+.banner h1 span{
+    color: #B28756;
+    margin-left: 20px;
+}
+
+.banner h2 {
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+.banner a {
+    display: block; /* porque vamos precisar mexer um pouco em padding e tudo mais */
+    background-color: #B28756;
+    color: #ffff;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px 30px; /* 10px cima e baixo e 30px lados */
+    margin-top: 30px;
+
+    border-radius: 20px;
+}
+
+.banner .slider-pointers {
+    width: 100vw;
+    height: 15px;
+    position: absolute; /* ele vai ignorar o overflow hidden do meu banner e vai ficar independente */
+    margin-top: -50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner .pointer {
+    width: 15px;
+    height: 15px;
+    border: 2px solid #B28756;
+    border-radius: 8px;
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer; /* indicar que são clicáveis */
+}
+
+.banner .pointer.active {
+    background-color: #B28756;
+}
+
+
+/*
+ ============================================================================
+
+SECTION
+
+=============================================================================
+*/
+
+.default {
+    background-color: red;
+    width: 100vw;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
